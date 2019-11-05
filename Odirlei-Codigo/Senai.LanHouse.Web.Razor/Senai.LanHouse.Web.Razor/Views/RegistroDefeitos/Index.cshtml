@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Senai.LanHouse.Web.Razor.Domains.RegistroDefeitos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataChamado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoDefeitoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoEquipamentoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataChamado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoDefeitoNavigation.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoEquipamentoNavigation.Nome)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
